@@ -1,8 +1,12 @@
 
 -Python3 предустановлен
+
 -Создать директорию для проекта, перейти в каталог
--создать виртуальное окружение,можно командой  python -m venv 
--активировать окружение Scripts/activate 
+
+-создать виртуальное окружение,можно командой  python -m venv
+
+-активировать окружение Scripts/activate
+ 
 -установить фреймворк Django и библиотеки, используя requirements.txt ,  pip install requirements.txt
 
 -командой django-admin startproject yalantis создать проект
