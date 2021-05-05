@@ -1,0 +1,37 @@
+{% extends "courses/layout.html" %}
+{% block body %}
+<form action="#" method="get">
+    <div class="row">
+        <div class="col">
+            <h3>Каталог курсів</h3>
+        </div>
+        <div class="col"><input type="text" name="search" placeholder="Пошук" class="form-control">
+        </div>
+        <div class="col"><button type="submit" class="btn btn-primary">Шукати</button>
+        </div>
+    </div>
+</form>
+
+{% for course in courses %}
+<div class="row" style="padding-top: 2em;font-size: 18px;">
+    <div class="col-sm-4"><a href="{% url 'detail' course.id %}" style="text-decoration: none;">
+            <span style="font-weight:bold;">{{course.name}}</a></span></div>
+    <div class="col-sm">{{course.begin}}</div>
+    <div class="col-sm">{{course.end}}</div>
+    <div class="col-sm">{{course.number}}</div>
+    <div class="col-sm" style="text-align:right">
+        <a href="{% url 'edit' course.id %}">
+            <i class="fas fa-pen"></i>
+        </a>
+    </div>
+    <div class="col-sm"><a href="{% url 'remove' course.id %}"><i class="far fa-trash-alt"></i></a>
+    </div>
+</div>
+{% endfor %}
+<div class="row" style="padding-top: 2em;">
+    <div class="col">
+        <a href="{% url 'add' %}" style="text-decoration: none;font-weight: bold;">Додати новий курс</a>
+    </div>
+</div>
+
+{% endblock %}

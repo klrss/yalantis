@@ -1,0 +1,11 @@
+{% extends "courses/layout.html" %}
+
+{% block body %}
+<h2>Курс {{course.name}}</h2>
+<ul>
+    <li>Починається {{course.begin}}</li>
+    <li>Кількість лекцій по курсу {{coure.number}}</li>
+    <li>Закінчується {{course.end}}</li>
+</ul>
+<a href="{% url 'index' %}">До списку курсів</a>
+{% endblock %}

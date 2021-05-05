@@ -1,0 +1,23 @@
+{% extends "courses/layout.html" %}
+
+{% block body %}
+<div class="container-fluid">
+<h3>Редагування</h3>
+<form action="" method="post">{% csrf_token %}
+<div class="row" style="padding-top: 2em;">
+    <div class="col">
+        {{form.name}}
+    </div></div>
+<div class="row" style="padding-top: 2em;">
+    <div class="col">{{form.begin}}</div>
+    <div class="col">{{form.end}}</div>
+    <div class="col">{{form.number}}</div>
+</div>
+<p style="padding-top: 2em;">    
+        <button type="submit" class="btn btn-primary">Записати</button>
+</p>
+
+</form>
+<p><a href="{% url 'index' %}">Повернутися</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "courses/layout.html" %}
+{% block body %}
+<div class="container-fluid">
+    <form action="" method="POST">   {% csrf_token %}
+<div class="row" style="padding-top: 2em;">
+    <div class="col">
+        <h4>Щоб видалити цей курс, нажміть 'Так'</h4>
+    </div>
+    
+    <div class="col">
+    <button type="submit" class="btn btn-danger">Tak</button></div>
+</form>
+</div>
+<hr />
+<p>
+<a href="{% url 'index' %}" >Назад до списку курсів</a></p>
+</div>
+{% endblock %}

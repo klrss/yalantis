@@ -1,0 +1,27 @@
+{% extends "courses/layout.html" %}
+
+{% block body %}
+<div class="text-center">
+    <h3>Форма для додавання курсу </h3>
+    <form action="{% url 'add' %}" method="post">{% csrf_token %}
+        <div class="row" style="padding-top: 2em;">
+            <div class="col">
+                {{form.name}}
+            </div>
+        </div>
+        <div class="row" style="padding-top: 2em;">
+            <div class="col">{{form.begin}}</div>
+            <div class="col">{{form.end}}</div>
+            <div class="col">{{form.number}}</div>
+
+        </div>
+        <p style="padding-top: 2em">
+            <button type="submit" class="btn btn-primary">Записати</button>
+        </p>
+    </form>
+    <p>
+        <a href="{% url 'index' %}">Назад до списку</a>
+    </p>
+</div>
+
+{% endblock %}
